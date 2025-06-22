@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class MultiCurrencyConverter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Fixed exchange rates
+        double inrToUsd = 0.012;
+        double inrToAed = 0.044;
+        double usdToInr = 83.0;
+        double usdToAed = 3.67;
+        double aedToInr = 22.5;
+        double aedToUsd = 0.27;
+
+        System.out.println("----- Currency Converter -----");
+        System.out.println("Choose input currency:");
+        System.out.println("1. INR (Indian Rupees)");
+        System.out.println("2. USD (US Dollar)");
+        System.out.println("3. AED (Dirham)");
+        System.out.print("Enter your choice (1-3): ");
+        int choice = sc.nextInt();
+
+        System.out.print("Enter amount: ");
+        double amount = sc.nextDouble();
+
+        System.out.println("\n--- Converted Amounts ---");
+
+        if (choice == 1) {
+            // INR to USD and AED
+            System.out.println("INR " + amount + " = USD " + (amount * inrToUsd));
+            System.out.println("INR " + amount + " = AED " + (amount * inrToAed));
+        } else if (choice == 2) {
+            // USD to INR and AED
+            System.out.println("USD " + amount + " = INR " + (amount * usdToInr));
+            System.out.println("USD " + amount + " = AED " + (amount * usdToAed));
+        } else if (choice == 3) {
+            // AED to INR and USD
+            System.out.println("AED " + amount + " = INR " + (amount * aedToInr));
+            System.out.println("AED " + amount + " = USD " + (amount * aedToUsd));
+        } else {
+            System.out.println("Invalid input currency choice.");
+        }
+
+        sc.close();
+    }
+}
+
+
+
+
+Output:
+----- Currency Converter -----
+Choose input currency:
+1. INR (Indian Rupees)
+2. USD (US Dollar)
+3. AED (Dirham)
+Enter your choice (1-3): 1
+Enter amount: 1000
+
+--- Converted Amounts ---
+INR 1000.0 = USD 12.0
+INR 1000.0 = AED 44.0
+
+
